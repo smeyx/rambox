@@ -37,6 +37,7 @@
 		"electron-is-dev": "^0.3.0",
 		"mime": "^2.3.1",
 		"rimraf": "2.6.2",
+		"spellchecker": "^3.4.4",
 		"tmp": "0.0.33"
 	}
 }

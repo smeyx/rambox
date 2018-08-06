@@ -204,6 +204,11 @@ Ext.define('Rambox.Application', {
 			Ext.cq1('app-main').getController().showLockWindow();
 		}
 
+		require('electron').webFrame.setSpellCheckProvider(localStorage.getItem('locale') || 'en', false, {
+			spellCheck: text => {
+				return !(require('spellchecker').isMisspelled(text));
+			}
+		});
 		// Remove spinner
 		Ext.get('spinner').destroy();
 	}

@@ -225,6 +225,12 @@ Ext.define('Rambox.ux.WebView',{
 
 		require('electron-context-menu')({window: webview});
 
+		require('electron').webFrame.setSpellCheckProvider(localStorage.getItem('locale') || 'en', false, {
+			spellCheck: text => {
+				return !(require('spellchecker').isMisspelled(text));
+			}
+		});
+
 		// Notifications in Webview
 		me.setNotifications(localStorage.getItem('locked') || JSON.parse(localStorage.getItem('dontDisturb')) ? false : me.record.get('notifications'));
 
