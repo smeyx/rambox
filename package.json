@@ -81,6 +81,7 @@
 			]
 		},
 		"linux": {
+			"executableName": "Rambox-OS",
 			"category": "Office",
 			"desktop": {
 				"Terminal": "false",
